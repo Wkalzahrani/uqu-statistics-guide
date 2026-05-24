@@ -1,0 +1,325 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>الدليل الإرشادي لتعبئة نموذج الإحصائيات</title>
+  <meta name="description" content="الدليل الإرشادي لتعبئة نموذج الإحصائيات — مرجع موحّد لمنسقي وأعضاء هيئة التدريس لقياس نواتج التعلم وتوزيع الدرجات وإعداد التقارير." />
+  <link rel="icon" href="assets/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --uqu-green:#006c35; --uqu-green-dark:#004c25; --uqu-gold:#c9a227; --uqu-gold-soft:#f8f1dc; --ink:#17202a; --muted:#667085; --line:#e4e7ec; --paper:#fff; --blue:#0b3f75; --success:#067647; --radius:18px; --shadow:0 16px 40px rgba(16,24,40,.10); }
+    html { scroll-behavior: smooth; }
+    body { font-family:'Cairo',"Segoe UI","Tahoma","Arial",sans-serif; color:var(--ink); background:radial-gradient(circle at top right,rgba(0,108,53,.10),transparent 28rem),linear-gradient(180deg,#f4f7f5 0%,#eef2f0 100%); line-height:1.85; }
+    .page-shell { max-width:1320px; margin:0 auto; padding:18px 24px 24px; }
+    .topbar { display:flex; justify-content:center; align-items:center; gap:16px; margin-bottom:24px; }
+    .brand-mini { width:100%; min-height:112px; position:relative; display:flex; justify-content:center; align-items:center!important; gap:12px; color:var(--uqu-green-dark); font-weight:800; }
+    .brand-mini .logo-box { position:absolute; inset-inline-start:0; top:50%; transform:translateY(-50%); width:104px; height:104px; border-radius:22px; padding:8px; background:#fff; border:1px solid rgba(0,108,53,.20); display:grid; place-items:center; overflow:hidden; box-shadow:0 10px 28px rgba(0,76,37,.13); flex:0 0 auto; }
+    .logo-box img { width:100%; height:100%; max-width:none; max-height:none; object-fit:contain; padding:2px; }
+    .logo-placeholder { font-size:10px; text-align:center; line-height:1.35; color:var(--uqu-green-dark); padding:6px; font-weight:800; }
+    .brand-mini h1 { font-family:'Cairo',sans-serif!important; text-align:center!important; font-size:clamp(1.55rem,2.6vw,2.35rem)!important; font-weight:900!important; color:var(--uqu-green-dark)!important; margin:0!important; line-height:1.45; letter-spacing:0; }
+    .brand-mini > div:last-child { width:100%; align-items:center!important; }
+    .hero { display:none!important; }
+    .nav-tabs { position:sticky; top:12px; z-index:20; display:grid; grid-template-columns:repeat(8,minmax(120px,1fr)); gap:10px; margin:22px 0 28px; background:rgba(255,255,255,.86); padding:14px; border:1px solid rgba(0,108,53,.12); border-radius:22px; box-shadow:0 14px 34px rgba(16,24,40,.09); backdrop-filter:blur(12px); }
+    .nav-button { border:1px solid var(--line); background:#fff; color:#344054; cursor:pointer; border-radius:15px; padding:12px 10px; font-family:inherit; font-weight:800; font-size:.88rem; line-height:1.45; transition:.22s ease; min-height:58px; }
+    .nav-button:hover { border-color:var(--uqu-gold); background:var(--uqu-gold-soft); transform:translateY(-1px); }
+    .nav-button.active { color:#fff; border-color:transparent; background:linear-gradient(135deg,var(--uqu-green),var(--blue)); box-shadow:0 10px 24px rgba(0,108,53,.20); }
+    .sheet-content { display:none; animation:fadeUp .35s ease; } .sheet-content.active { display:block; }
+    @keyframes fadeUp { from{opacity:0; transform:translateY(14px);} to{opacity:1; transform:translateY(0);} }
+    .sheet-title-card,.content-section,.checklist-box { background:var(--paper); border:1px solid var(--line); box-shadow:0 8px 26px rgba(16,24,40,.07); }
+    .sheet-title-card { border-radius:24px; padding:26px; margin-bottom:22px; position:relative; overflow:hidden; box-shadow:var(--shadow); }
+    .sheet-title-card::before { content:""; position:absolute; inset-inline-start:0; top:0; width:8px; height:100%; background:linear-gradient(180deg,var(--uqu-green),var(--uqu-gold)); }
+    .sheet-title-card h2 { color:var(--uqu-green-dark); font-size:clamp(1.45rem,2.4vw,2.2rem); margin-bottom:8px; }
+    .sheet-title-card p,.instruction-text { color:var(--muted); }
+    .grid-2 { display:grid; grid-template-columns:.95fr 1.05fr; gap:22px; align-items:start; }
+    .content-section { padding:26px; margin-bottom:22px; border-radius:var(--radius); }
+    .section-title { color:var(--uqu-green-dark); font-size:1.24rem; margin-bottom:14px; font-weight:900; display:flex; align-items:center; gap:10px; }
+    .section-title::before { display:none; }
+    .steps-list { counter-reset:step-counter; list-style:none; }
+    .step-item { counter-increment:step-counter; position:relative; padding:14px 58px 14px 0; border-bottom:1px dashed #d0d5dd; color:#475467; }
+    .step-item:last-child { border-bottom:0; }
+    .step-item::before { content:counter(step-counter); position:absolute; right:0; top:16px; width:38px; height:38px; border-radius:13px; display:grid; place-items:center; background:linear-gradient(135deg,var(--uqu-green),var(--uqu-gold)); color:#fff; font-weight:900; box-shadow:0 8px 16px rgba(0,108,53,.18); }
+    .step-item strong { color:var(--blue); }
+    .table-wrapper { overflow-x:auto; border-radius:16px; border:1px solid var(--line); box-shadow:0 8px 22px rgba(16,24,40,.06); background:#fff; margin-top:14px; }
+    table { width:100%; border-collapse:collapse; min-width:680px; background:#fff; }
+    th { color:#fff; background:linear-gradient(135deg,var(--uqu-green-dark),var(--blue)); padding:10px 8px; text-align:right; font-size:.82rem; border-bottom:3px solid var(--uqu-gold); white-space:nowrap; }
+    td { padding:9px 8px; border-bottom:1px solid #eef0f3; color:#344054; font-size:.84rem; vertical-align:top; }
+    tbody tr:nth-child(even) { background:#fbfcfb; } tbody tr:hover { background:#f1f8f4; }
+    .label-cell { font-weight:900; color:var(--blue); background:#f7fbf8; } .number-cell,.percentage-cell { text-align:center; font-weight:900; } .number-cell { color:var(--uqu-green-dark); } .percentage-cell { color:var(--blue); } .total-cell { background:var(--uqu-gold-soft)!important; color:var(--uqu-green-dark)!important; font-weight:900; }
+    .alert { display:grid; grid-template-columns:auto 1fr; gap:12px; padding:16px 18px; border-radius:16px; margin:18px 0; border:1px solid transparent; font-weight:700; }
+    .alert-icon { font-size:1.25rem; line-height:1; margin-top:6px; } .alert-warning { color:#7a4b00; background:#fff8e8; border-color:#f2d28a; } .alert-success { color:var(--success); background:#ecfdf3; border-color:#abefc6; } .alert-info { color:#175cd3; background:#eff8ff; border-color:#b2ddff; }
+    .formula-box { direction:rtl; text-align:center; background:linear-gradient(135deg,#f1f8f4,#fff8e8); border:1px solid rgba(201,162,39,.38); border-radius:16px; padding:18px; margin:18px 0; color:var(--uqu-green-dark); font-weight:900; }
+    .example-section { padding:0; overflow:hidden; border-radius:18px; background:linear-gradient(135deg,rgba(0,108,53,.035),rgba(201,162,39,.06)); border:1px solid rgba(0,108,53,.10); }
+    .example-toggle { width:100%; border:0; background:linear-gradient(135deg,rgba(0,108,53,.06),rgba(201,162,39,.10)); color:var(--uqu-green-dark); cursor:pointer; padding:18px 22px; font-family:'Cairo',sans-serif; font-size:1.05rem; font-weight:900; text-align:right; display:flex; align-items:center; gap:16px; }
+    .example-toggle::after { content:"عرض المثال ▾"; margin-inline-start:auto; min-width:128px; height:42px; border-radius:999px; background:linear-gradient(135deg,var(--uqu-green),var(--uqu-green-dark)); color:#fff; display:inline-grid; place-items:center; font-size:.9rem; font-weight:900; box-shadow:0 10px 22px rgba(0,108,53,.20); }
+    .example-section.is-open .example-toggle::after { content:"إخفاء المثال ▴"; }
+    .example-toggle:hover::after { box-shadow:0 12px 26px rgba(0,108,53,.28); }
+    .example-collapse-body { display:none; padding:20px; } .example-section.is-open .example-collapse-body { display:block; }
+    .checklist-box { border-radius:18px; padding:20px; } .checklist-title { color:var(--uqu-green-dark); font-weight:900; margin-bottom:12px; } .checklist-item { display:flex; align-items:center; gap:10px; margin:10px 0; color:#344054; } .checklist-item input { width:18px; height:18px; accent-color:var(--uqu-green); }
+    .quality-note { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin:22px 0; } .quality-card { background:#fff; border:1px solid var(--line); border-radius:18px; padding:18px; box-shadow:0 8px 24px rgba(16,24,40,.06); } .quality-card strong { color:var(--uqu-green-dark); display:block; margin-bottom:6px; } .quality-card p { color:var(--muted); font-size:.92rem; }
+    #sheet-2 .table-wrapper { border-radius:24px 24px 0 0; overflow-x:auto; background:#fff; border:1px solid var(--line); box-shadow:0 14px 34px rgba(16,24,40,.08); }
+    #sheet-2 .compact-table { width:100%; min-width:0; table-layout:fixed; border-collapse:collapse; background:#fff; }
+    #sheet-2 .compact-table thead th { background:var(--uqu-green-dark); color:#fff; padding:12px 4px; text-align:center; vertical-align:middle; font-weight:900; font-size:.76rem; line-height:1.35; border-left:1px solid rgba(255,255,255,.42); border-bottom:5px solid var(--uqu-gold); white-space:normal; }
+    #sheet-2 .compact-table thead th:first-child { border-top-right-radius:24px; } #sheet-2 .compact-table thead th:last-child { border-top-left-radius:24px; border-left:0; }
+    #sheet-2 .compact-table tbody td,#sheet-2 .compact-table tfoot td { background:#fff; padding:12px 6px; vertical-align:middle; border:1px solid #e8eeeb; box-shadow:none; overflow:hidden; }
+    #sheet-2 .compact-table tbody tr:hover,#sheet-2 .compact-table tbody tr:hover td,#sheet-2 .compact-table tbody tr:nth-child(even) { background:#fff; }
+    #sheet-2 .compact-table td.label-cell { text-align:right; color:#0b3f75; font-weight:900; font-size:.8rem; line-height:1.5; padding-inline:10px; }
+    #sheet-2 .compact-table .clo-desc { display:block; color:#0b3f75; font-weight:900; line-height:1.5; }
+    #sheet-2 .compact-table td.code,#sheet-2 .compact-table td.plo { text-align:center; color:var(--uqu-green-dark); font-weight:950; font-size:.86rem; white-space:nowrap; }
+    #sheet-2 .compact-table .pct,#sheet-2 .compact-table .dash { display:inline-flex; align-items:center; justify-content:center; width:min(48px,100%); min-height:28px; padding:4px 6px; border-radius:999px; font-weight:950; font-size:.78rem; line-height:1; white-space:nowrap; }
+    #sheet-2 .compact-table .pct { background:#eef9f0; color:var(--uqu-green-dark); border:0; } #sheet-2 .compact-table .dash { background:#f3f6f5; color:#667085; border:0; }
+    #sheet-2 .compact-table .total-cell { background:var(--uqu-gold-soft)!important; color:var(--uqu-green-dark)!important; font-weight:950; } #sheet-2 .compact-table .pct.total { background:#fff7e6; border:2px solid var(--uqu-gold); color:var(--uqu-green-dark); }
+    #sheet-2 .compact-table tfoot td { background:#f2f4f7!important; color:var(--uqu-green-dark)!important; font-weight:950; padding-block:10px; text-align:center; } #sheet-2 .compact-table tfoot .pct,#sheet-2 .compact-table tfoot .pct.total { background:#fff; color:var(--uqu-green-dark); border:2px solid #d0d5dd; } #sheet-2 .compact-table tfoot td.label-cell { text-align:center!important; vertical-align:middle; }
+    .table-wrapper table:not(.compact-table) { min-width:620px; border-collapse:collapse; table-layout:auto; background:#fff; }
+    .table-wrapper table:not(.compact-table) caption { padding:8px 10px; color:var(--muted); font-size:.76rem; text-align:right; }
+    .table-wrapper table:not(.compact-table) thead th { background:var(--uqu-green-dark); color:#fff; padding:10px 8px; text-align:center; vertical-align:middle; font-weight:900; font-size:.78rem; line-height:1.35; border-left:1px solid rgba(255,255,255,.42); border-bottom:5px solid var(--uqu-gold); white-space:normal; }
+    .table-wrapper table:not(.compact-table) thead th:first-child { border-top-right-radius:16px; }
+    .table-wrapper table:not(.compact-table) thead th:last-child { border-top-left-radius:16px; border-left:0; }
+    .table-wrapper table:not(.compact-table) tbody td { background:#fff; padding:9px 8px; text-align:center; vertical-align:middle; border:1px solid #e8eeeb; box-shadow:none; color:#344054; font-size:.8rem; line-height:1.55; }
+    .table-wrapper table:not(.compact-table) tbody tr,
+    .table-wrapper table:not(.compact-table) tbody tr:nth-child(even),
+    .table-wrapper table:not(.compact-table) tbody tr:hover,
+    .table-wrapper table:not(.compact-table) tbody tr:hover td { background:#fff; }
+    .table-wrapper table:not(.compact-table) td.label-cell { text-align:right; color:#0b3f75; font-weight:900; background:#f7fbf8; }
+    .table-wrapper table:not(.compact-table) td.number-cell,
+    .table-wrapper table:not(.compact-table) td.percentage-cell { text-align:center; font-weight:900; }
+    .table-wrapper table:not(.compact-table) td.total-cell { background:var(--uqu-gold-soft)!important; color:var(--uqu-green-dark)!important; font-weight:950; }
+    #sheet-6 .table-wrapper table tbody tr:first-child td { background:#f2f4f7!important; color:#344054; font-weight:900; }
+    #sheet-6 .table-wrapper table tbody tr:first-child td.label-cell { color:#0b3f75; }
+    footer { margin-top:32px; border-radius:24px 24px 0 0; background:linear-gradient(135deg,#101828,var(--uqu-green-dark)); color:rgba(255,255,255,.86); padding:24px; text-align:center; border-top:5px solid var(--uqu-gold); } footer a { color:#fff; text-decoration:underline; font-weight:700; }
+    .hidden-print-note { color:var(--muted); font-size:.88rem; margin-top:6px; }
+    .nav-button:focus { outline:3px solid rgba(0,108,53,.12); outline-offset:3px; }
+    @media (max-width:1180px){ .nav-tabs{grid-template-columns:repeat(4,1fr);} .grid-2{grid-template-columns:1fr;} .quality-note{grid-template-columns:1fr;} }
+    @media (max-width:900px){ #sheet-2 .compact-table{min-width:680px;} #sheet-2 .compact-table thead th{padding:10px 4px; font-size:.68rem;} #sheet-2 .compact-table tbody td,#sheet-2 .compact-table tfoot td{padding:10px 5px; font-size:.72rem;} #sheet-2 .compact-table td.label-cell{font-size:.74rem; line-height:1.45; padding-inline:8px;} #sheet-2 .compact-table .pct,#sheet-2 .compact-table .dash{width:min(42px,100%); min-height:26px; padding:4px 5px; font-size:.72rem;} }
+    @media (max-width:720px){ .page-shell{padding:14px;} .topbar{align-items:center; flex-direction:column;} .brand-mini{min-height:168px; padding-top:104px;} .brand-mini .logo-box{inset-inline-start:50%; top:0; transform:translateX(50%); width:92px; height:92px;} .brand-mini h1{font-size:1.35rem!important;} .nav-tabs{grid-template-columns:1fr;} .content-section,.sheet-title-card{padding:20px;} table{min-width:620px;} .example-toggle{flex-direction:column; align-items:stretch;} .example-toggle::after{margin-inline-start:0; width:100%;} }
+    @media print{ body{background:#fff;} .page-shell{max-width:none; padding:0;} .topbar,.nav-tabs,.hidden-print-note{display:none!important;} .sheet-content{display:block!important; page-break-before:always; animation:none;} .content-section,.sheet-title-card{break-inside:avoid; box-shadow:none;} table{min-width:0; font-size:10px;} th,td{padding:7px;} }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar" aria-label="الشريط العلوي">
+      <div class="brand-mini" style="align-items:center;">
+        <div class="logo-box" aria-label="شعار الكلية التطبيقية جامعة أم القرى">
+          <img src="assets/uqu-applied-college-logo.jpeg" alt="شعار الكلية التطبيقية - جامعة أم القرى" onerror="this.style.display='none'; this.parentNode.querySelector('.logo-placeholder').style.display='block';" />
+          <div class="logo-placeholder" style="display:none;">شعار الكلية التطبيقية<br>جامعة أم القرى</div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:flex-start;"><h1>الدليل الإرشادي لتعبئة نموذج الإحصائيات</h1></div>
+      </div>
+    </header>
+    <nav class="nav-tabs" aria-label="أقسام الدليل" role="tablist">
+      <button type="button" class="nav-button active" role="tab" aria-controls="sheet-1" aria-selected="true" onclick="showSheet(0)">البيانات الأساسية</button><button type="button" class="nav-button" role="tab" aria-controls="sheet-2" aria-selected="false" onclick="showSheet(1)">توزيع الدرجات</button><button type="button" class="nav-button" role="tab" aria-controls="sheet-3" aria-selected="false" onclick="showSheet(2)">التكاليف والمشاريع</button><button type="button" class="nav-button" role="tab" aria-controls="sheet-4" aria-selected="false" onclick="showSheet(3)">الاختبار النصفي</button><button type="button" class="nav-button" role="tab" aria-controls="sheet-5" aria-selected="false" onclick="showSheet(4)">الاختبار النهائي</button><button type="button" class="nav-button" role="tab" aria-controls="sheet-6" aria-selected="false" onclick="showSheet(5)">التصحيح الآلي</button><button type="button" class="nav-button" role="tab" aria-controls="sheet-7" aria-selected="false" onclick="showSheet(6)">التقديرات</button><button type="button" class="nav-button" role="tab" aria-controls="sheet-8" aria-selected="false" onclick="showSheet(7)">القياس النهائي</button>
+    </nav>
+    <section class="quality-note" aria-label="ضوابط الجودة العامة"><div class="quality-card"><strong>الاتساق</strong><p>توحيد اسم المقرر، رمزه، اسم المنسق، أسماء الشعب، وأسماء أعضاء هيئة التدريس في جميع الأوراق.</p></div><div class="quality-card"><strong>الموثوقية</strong><p>ربط كل مؤشر بمصدر بيانات واضح: اختبار نصفي، اختبار نهائي، تكاليف، مشاريع، أو تقرير تصحيح آلي.</p></div><div class="quality-card"><strong>التحقق</strong><p>مراجعة المجاميع والنسب المستهدفة قبل الاعتماد، خصوصاً تطابق عدد الطلاب ومجموع التقديرات.</p></div></section>
+
+    <main id="sheet-1" class="sheet-content active" role="region" aria-labelledby="sheet1-title">
+      <div class="sheet-title-card"><h2 id="sheet1-title">البيانات الأساسية</h2><p>هذا القسم يمثل مرجع النموذج بالكامل، وأي خطأ فيه سينتقل إلى بقية الأوراق والتقارير.</p></div>
+      <div class="grid-2">
+        <section class="content-section">
+          <div class="section-title">المعلومات المطلوبة</div>
+          <p class="instruction-text">يجب إدخال البيانات بدقة عالية، مع الالتزام بالتسمية الرسمية للمقرر والمنسق والأستاذ.</p>
+          <ul class="steps-list">
+            <li class="step-item"><strong>العام والفصل الدراسي:</strong> مثال: الفصل الدراسي الأول 1447هـ.</li>
+            <li class="step-item"><strong>رمز واسم المقرر:</strong> مثال: APAM2508T - الاتصالات التسويقية المتكاملة.</li>
+            <li class="step-item"><strong>منسق المقرر:</strong> اسم عضو هيئة التدريس المسؤول عن التنسيق.</li>
+            <li class="step-item"><strong>أستاذ المقرر:</strong> اسم أستاذ أو أستاذة المقرر لكل شعبة.</li>
+          </ul>
+        </section>
+        <section class="content-section">
+          <div class="example-section">
+            <div class="example-title">مثال تطبيقي</div>
+            <div class="table-wrapper">
+              <table>
+                <caption class="hidden-print-note">مثال: البيانات الأساسية للمقرر</caption>
+                <thead><tr><th>البيان</th><th>المحتوى</th></tr></thead>
+                <tbody>
+                  <tr><td class="label-cell">العام والفصل الدراسي</td><td>الفصل الدراسي الأول 1447هـ</td></tr>
+                  <tr><td class="label-cell">رمز المقرر واسمه</td><td>APAM2508T - الاتصالات التسويقية المتكاملة</td></tr>
+                  <tr><td class="label-cell">منسق المقرر</td><td>د.نجاح الرشيدي</td></tr>
+                  <tr><td class="label-cell">أستاذ المقرر</td><td>د.نجاح الرشيدي، د. أحمد حريري</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="alert alert-success"><div class="alert-icon">✓</div><div>قبل الانتقال لباقي الأوراق، تأكد من مطابقة البيانات مع توصيف المقرر والخطة الدراسية.</div></div>
+        </section>
+      </div>
+    </main>
+
+    <section id="sheet-2" class="sheet-content" role="region" aria-labelledby="sheet2-title">
+      <div class="sheet-title-card"><h2 id="sheet2-title">توزيع الدرجات على نواتج التعلم</h2><p>الغرض هو بيان وزن كل نشاط تقويمي وربطه بنواتج تعلم المقرر ومخرجات البرنامج.</p></div>
+      <section class="content-section">
+        <div class="section-title">خطوات التعبئة</div>
+        <ul class="steps-list">
+          <li class="step-item"><strong>إدراج نواتج التعلم:</strong> اكتب كل ناتج تعلم مقرر كما ورد في توصيف المقرر.</li>
+          <li class="step-item"><strong>تحديد أوزان الأنشطة:</strong> التكاليف 10%، المشاريع 30%، النصفي 20%، النهائي 40%.</li>
+          <li class="step-item"><strong>توزيع كل ناتج:</strong> وزّع مساهمة كل نشاط في قياس الناتج.</li>
+          <li class="step-item"><strong>الربط البرامجي:</strong> اربط كل CLO بكود PLO المناسب.</li>
+        </ul>
+        <div class="alert alert-warning"><div class="alert-icon">⚠</div><div>مجموع أوزان الأنشطة يجب أن يساوي 100% بالضبط، وأي فرق يجب معالجته قبل الرفع.</div></div>
+      </section>
+      <section class="content-section">
+        <div class="example-section">
+          <div class="example-title">مثال: توزيع أوزان الأنشطة على نواتج التعلم</div>
+          <div class="table-wrapper">
+            <table class="compact-table">
+              <colgroup><col style="width:6%;"><col style="width:42%;"><col style="width:8%;"><col style="width:8%;"><col style="width:8%;"><col style="width:8%;"><col style="width:10%;"><col style="width:10%;"></colgroup>
+              <thead><tr><th>الرمز</th><th>نواتج تعلم المقرر</th><th>تكاليف (10%)</th><th>مشروع (30%)</th><th>النصفي (20%)</th><th>النهائي (40%)</th><th>المجموع</th><th>PLO</th></tr></thead>
+              <tbody>
+                <tr><td class="number-cell code">1.1</td><td class="label-cell"><span class="clo-desc">يعرّف المفاهيم والمبادئ العامة للاتصالات التسويقية المتكاملة</span></td><td class="number-cell"><span class="pct">6%</span></td><td class="number-cell"><span class="dash">-</span></td><td class="number-cell"><span class="pct">14%</span></td><td class="number-cell"><span class="pct">20%</span></td><td class="total-cell"><span class="pct total">40%</span></td><td class="number-cell plo">ع1</td></tr>
+                <tr><td class="number-cell code">1.2</td><td class="label-cell"><span class="clo-desc">تحديد مكونات المزج التسويقي وتطبيق المكونات في صناعة قرارات الاتصال.</span></td><td class="number-cell"><span class="pct">4%</span></td><td class="number-cell"><span class="dash">-</span></td><td class="number-cell"><span class="pct">6%</span></td><td class="number-cell"><span class="pct">20%</span></td><td class="total-cell"><span class="pct total">30%</span></td><td class="number-cell plo">ع2</td></tr>
+                <tr><td class="number-cell code">2.1</td><td class="label-cell">مهارة تخطيط لحملة ترويجية وإعلانية</td><td class="number-cell"><span class="dash">-</span></td><td class="number-cell"><span class="pct">10%</span></td><td class="number-cell"><span class="dash">-</span></td><td class="number-cell"><span class="dash">-</span></td><td class="total-cell"><span class="pct total">10%</span></td><td class="number-cell plo">م1</td></tr>
+                <tr><td class="number-cell code">2.2</td><td class="label-cell">تقييم مدى توافر العناصر العلمية للحملة الترويجية للشركات</td><td class="number-cell"><span class="dash">-</span></td><td class="number-cell"><span class="pct">6%</span></td><td class="number-cell"><span class="dash">-</span></td><td class="number-cell"><span class="dash">-</span></td><td class="total-cell"><span class="pct total">6%</span></td><td class="number-cell plo">م2</td></tr>
+                <tr><td class="number-cell code">2.3</td><td class="label-cell">تطبيق واستخدام المفردات ومصطلحات التسويق في الحملة الترويجية</td><td class="number-cell"><span class="dash">-</span></td><td class="number-cell"><span class="pct">6%</span></td><td class="number-cell"><span class="dash">-</span></td><td class="number-cell"><span class="dash">-</span></td><td class="total-cell"><span class="pct total">6%</span></td><td class="number-cell plo">م3</td></tr>
+                <tr><td class="number-cell code">3.1</td><td class="label-cell">يظهر الطالب القدرة على الابتكار في إعداد حملات ترويجية وإعلانية سواء كان ذلك بشكل فردي أو ضمن فريق عمل</td><td class="number-cell"><span class="dash">-</span></td><td class="number-cell"><span class="pct">8%</span></td><td class="number-cell"><span class="dash">-</span></td><td class="number-cell"><span class="dash">-</span></td><td class="total-cell"><span class="pct total">8%</span></td><td class="number-cell plo">ق3</td></tr>
+              </tbody>
+              <tfoot><tr><td colspan="2" class="label-cell">المجموع</td><td class="number-cell"><span class="pct">10%</span></td><td class="number-cell"><span class="pct">30%</span></td><td class="number-cell"><span class="pct">20%</span></td><td class="number-cell"><span class="pct">40%</span></td><td class="total-cell"><span class="pct total">100%</span></td><td></td></tr></tfoot>
+            </table>
+          </div>
+        </div>
+        <div class="alert alert-warning"><div class="alert-icon">⚠</div><div>مجموع أوزان الأنشطة يجب أن يساوي 100% (مجموع الأعمدة في السطر الأخير يوضح التوزيع الكلي لوزن المقرر).</div></div>
+      </section>
+    </section>
+
+    <section id="sheet-3" class="sheet-content" role="region" aria-labelledby="sheet3-title">
+      <div class="sheet-title-card"><h2 id="sheet3-title">قياس مخرجات التكاليف والمشاريع</h2><p>يستخدم هذا القسم لإدخال أداء الشعب في الأنشطة العملية وربطها بنواتج التعلم المستهدفة.</p></div>
+      <div class="grid-2">
+        <section class="content-section"><div class="section-title">آلية الإدخال</div><ul class="steps-list"><li class="step-item"><strong>معلومات الشعبة:</strong> رقم الشعبة، النوع، الأستاذ، وعدد الطلاب.</li><li class="step-item"><strong>أعمدة النواتج:</strong> أضف عمود العدد وعمود النسبة لكل ناتج تعلم.</li><li class="step-item"><strong>البيانات التفصيلية:</strong> أدخل بيانات كل شعبة في صف مستقل.</li><li class="step-item"><strong>الاحتساب:</strong> استخدم معادلات Excel للنسب والمتوسطات بدلاً من الإدخال اليدوي.</li></ul><div class="formula-box">النسبة المئوية = (عدد الإجابات الصحيحة ÷ عدد الطلاب) × 100</div></section>
+        <section class="content-section"><div class="example-section"><div class="example-title">مثال مختصر</div><div class="table-wrapper"><table><caption class="hidden-print-note">مثال: قياس مخرجات التكاليف والمشاريع</caption><thead><tr><th>الشعبة</th><th>النوع</th><th>الأستاذ</th><th>عدد الطلاب</th><th>ناتج 2.1</th><th>نسبة</th><th>ناتج 2.2</th><th>نسبة</th></tr></thead><tbody><tr><td class="number-cell">1</td><td>الطالبات</td><td>د.نجاح الرشيدي</td><td class="number-cell">22</td><td class="number-cell">22</td><td class="percentage-cell">100%</td><td class="number-cell">20</td><td class="percentage-cell">90.9%</td></tr><tr><td class="number-cell">2</td><td>الطلاب</td><td>د. أحمد حريري</td><td class="number-cell">17</td><td class="number-cell">17</td><td class="percentage-cell">100%</td><td class="number-cell">16</td><td class="percentage-cell">94.1%</td></tr><tr><td class="number-cell">701</td><td>الطالبات</td><td>د.نجاح الرشيدي</td><td class="number-cell">36</td><td class="number-cell">36</td><td class="percentage-cell">100%</td><td class="number-cell">34</td><td class="percentage-cell">94.4%</td></tr></tbody></table></div></div><div class="alert alert-info"><div class="alert-icon">ℹ</div><div>يفضل حماية خلايا المعادلات في ملف Excel حتى لا يتم تعديلها بالخطأ أثناء الإدخال.</div></div></section>
+      </div>
+    </section>
+
+    <section id="sheet-4" class="sheet-content" role="region" aria-labelledby="sheet4-title">
+      <div class="sheet-title-card"><h2 id="sheet4-title">قياس مخرجات الاختبار النصفي</h2><p>يتم إدخال نسب أداء الطلاب في أسئلة الاختبار النصفي، مع التأكد من تغطية جميع الأسئلة والشعب.</p></div>
+      <section class="content-section"><div class="section-title">ضوابط التعبئة</div><ul class="steps-list"><li class="step-item"><strong>معلومات الشعبة:</strong> رقم الشعبة، النوع، الأستاذ، وعدد الطلاب.</li><li class="step-item"><strong>أعمدة الأسئلة:</strong> QT1 إلى QT20 أو حسب عدد أسئلة الاختبار المعتمد.</li><li class="step-item"><strong>النسب المئوية:</strong> أدخل متوسط أداء الطلاب في كل سؤال.</li><li class="step-item"><strong>حدود القيم:</strong> جميع النسب يجب أن تقع بين 0% و100%.</li></ul></section>
+      <section class="content-section"><div class="example-section"><div class="example-title">مثال جدول الاختبار النصفي</div><div class="table-wrapper"><table><caption class="hidden-print-note">مثال: قياس مخرجات الاختبار النصفي</caption><thead><tr><th>الشعبة</th><th>النوع</th><th>الأستاذ</th><th>عدد</th><th>Q1</th><th>Q2</th><th>Q3</th><th>Q4</th><th>Q5</th><th>المتوسط</th></tr></thead><tbody><tr><td class="number-cell">1</td><td>الطالبات</td><td>د.نجاح الرشيدي</td><td class="number-cell">22</td><td class="percentage-cell">100%</td><td class="percentage-cell">95.45%</td><td class="percentage-cell">100%</td><td class="percentage-cell">95.45%</td><td class="percentage-cell">100%</td><td class="percentage-cell total-cell">98.18%</td></tr><tr><td class="number-cell">2</td><td>الطلاب</td><td>د. أحمد حريري</td><td class="number-cell">17</td><td class="percentage-cell">80%</td><td class="percentage-cell">100%</td><td class="percentage-cell">100%</td><td class="percentage-cell">80%</td><td class="percentage-cell">100%</td><td class="percentage-cell total-cell">92%</td></tr></tbody></table></div></div></section>
+      <div class="checklist-box"><div class="checklist-title">قائمة تحقق قبل الاعتماد</div><label class="checklist-item"><input type="checkbox"> جميع الأسئلة لها بيانات.</label><label class="checklist-item"><input type="checkbox"> النسب بين 0 و100%.</label><label class="checklist-item"><input type="checkbox"> جميع الشعب مدرجة.</label><label class="checklist-item"><input type="checkbox"> أسماء الأساتذة متطابقة مع ورقة البيانات الأساسية.</label></div>
+    </section>
+
+    <section id="sheet-5" class="sheet-content" role="region" aria-labelledby="sheet5-title">
+      <div class="sheet-title-card"><h2 id="sheet5-title">قياس مخرجات الاختبار النهائي</h2><p>تطبق نفس منهجية الاختبار النصفي على الاختبار النهائي، غالباً بعدد أسئلة أكبر ووزن أعلى.</p></div>
+      <section class="content-section"><div class="section-title">آلية القياس</div><ul class="steps-list"><li class="step-item"><strong>تعبئة بيانات الشعبة:</strong> رقم الشعبة، النوع، الأستاذ، وعدد الطلاب.</li><li class="step-item"><strong>إدراج الأسئلة:</strong> Q1 إلى Q40 أو حسب الاختبار النهائي المعتمد.</li><li class="step-item"><strong>إدخال نسب الأداء:</strong> نسبة تحقق كل سؤال لكل شعبة.</li><li class="step-item"><strong>احتساب المتوسط:</strong> متوسط أداء الشعبة في أسئلة الاختبار النهائي.</li></ul></section>
+      <section class="content-section"><div class="example-section"><div class="example-title">عينة من جدول الاختبار النهائي</div><div class="table-wrapper"><table><caption class="hidden-print-note">مثال: قياس مخرجات الاختبار النهائي</caption><thead><tr><th>الشعبة</th><th>النوع</th><th>الأستاذ</th><th>عدد</th><th>Q1</th><th>Q2</th><th>Q3</th><th>...</th><th>Q40</th><th>المتوسط</th></tr></thead><tbody><tr><td class="number-cell">1</td><td>الطالبات</td><td>د.نجاح الرشيدي</td><td class="number-cell">22</td><td class="percentage-cell">95.45%</td><td class="percentage-cell">95.45%</td><td class="percentage-cell">100%</td><td class="number-cell">...</td><td class="percentage-cell">100%</td><td class="percentage-cell total-cell">94.77%</td></tr><tr><td class="number-cell">2</td><td>الطلاب</td><td>د. أحمد حريري</td><td class="number-cell">17</td><td class="percentage-cell">88.24%</td><td class="percentage-cell">100%</td><td class="percentage-cell">100%</td><td class="number-cell">...</td><td class="percentage-cell">100%</td><td class="percentage-cell total-cell">97.06%</td></tr></tbody></table></div></div></section>
+    </section>
+
+    <section id="sheet-6" class="sheet-content" role="region" aria-labelledby="sheet6-title">
+      <div class="sheet-title-card"><h2 id="sheet6-title">تقرير إجابات التصحيح الآلي</h2><p>يوثق هذا القسم مخرجات برنامج التصحيح الآلي، ويعد مصدراً مهماً للتحقق والتدقيق.</p></div>
+      <section class="content-section"><div class="section-title">متطلبات الإرفاق</div><ul class="steps-list"><li class="step-item"><strong>استخراج التقرير:</strong> من برنامج التصحيح المعتمد مثل Remark أو أي نظام مستخدم.</li><li class="step-item"><strong>مفتاح الإجابة:</strong> إرفاق الإجابات الصحيحة للأسئلة.</li><li class="step-item"><strong>بيانات الطلاب:</strong> تضمين الإجابات، عدد الصحيح، النسبة، والتقدير.</li><li class="step-item"><strong>التنسيق:</strong> حفظ التقرير بشكل واضح وسهل المراجعة.</li></ul></section>
+      <section class="content-section"><div class="example-section"><div class="example-title">مثال تقرير التصحيح الآلي</div><div class="table-wrapper"><table><caption class="hidden-print-note">مثال: تقرير التصحيح الآلي</caption><thead><tr><th>الطالب / المفتاح</th><th>الإجابات</th><th>صحيح</th><th>من</th><th>النسبة</th><th>التقدير</th></tr></thead><tbody><tr><td class="label-cell">مفتاح الإجابة</td><td>ب، ب، أ، ب، ب، أ...</td><td class="number-cell">40</td><td class="number-cell">40</td><td class="percentage-cell">100%</td><td class="number-cell">-</td></tr><tr><td>الطالب 1</td><td>ب، ب، أ، ب، ب، أ...</td><td class="number-cell">40</td><td class="number-cell">40</td><td class="percentage-cell">100%</td><td class="number-cell">A+</td></tr><tr><td>الطالب 2</td><td>ب، ب، أ، ب، د، أ...</td><td class="number-cell">38</td><td class="number-cell">40</td><td class="percentage-cell">95%</td><td class="number-cell">A</td></tr></tbody></table></div></div></section>
+    </section>
+
+    <section id="sheet-7" class="sheet-content" role="region" aria-labelledby="sheet7-title">
+      <div class="sheet-title-card"><h2 id="sheet7-title">توزيع التقديرات النهائية</h2><p>يعرض هذا القسم توزيع الطلاب على التقديرات النهائية، مع تحقق إلزامي من مطابقة المجموع لعدد الطلاب.</p></div>
+      <section class="content-section"><div class="section-title">خطوات التعبئة</div><ul class="steps-list"><li class="step-item"><strong>معلومات الشعبة:</strong> رقم الشعبة، النوع، الأستاذ، وعدد الطلاب الكلي.</li><li class="step-item"><strong>أعمدة التقديرات:</strong> A+، A، B+، B، C+، C، D+، D، F، محروم.</li><li class="step-item"><strong>إدخال الأعداد:</strong> عدد الطلاب الحاصلين على كل تقدير.</li><li class="step-item"><strong>التحقق:</strong> مجموع التقديرات يجب أن يساوي عدد الطلاب في الشعبة.</li></ul><div class="formula-box">المجموع = A+ + A + B+ + B + C+ + C + D+ + D + F + محروم = إجمالي الطلاب</div></section>
+      <section class="content-section"><div class="example-section"><div class="example-title">مثال جدول التقديرات</div><div class="table-wrapper"><table><caption class="hidden-print-note">مثال: توزيع التقديرات النهائية</caption><thead><tr><th>الشعبة</th><th>النوع</th><th>الأستاذ</th><th>A+</th><th>A</th><th>B+</th><th>B</th><th>C</th><th>D</th><th>محروم</th><th>المجموع</th></tr></thead><tbody><tr><td class="number-cell">1</td><td>الطالبات</td><td>د.نجاح الرشيدي</td><td class="number-cell">1</td><td class="number-cell">4</td><td class="number-cell">5</td><td class="number-cell">5</td><td class="number-cell">5</td><td class="number-cell">1</td><td class="number-cell">1</td><td class="total-cell">22</td></tr><tr><td class="number-cell">2</td><td>الطلاب</td><td>د. أحمد حريري</td><td class="number-cell">5</td><td class="number-cell">2</td><td class="number-cell">3</td><td class="number-cell">2</td><td class="number-cell">3</td><td class="number-cell">1</td><td class="number-cell">1</td><td class="total-cell">17</td></tr></tbody></table></div></div></section>
+    </section>
+
+    <section id="sheet-8" class="sheet-content" role="region" aria-labelledby="sheet8-title">
+      <div class="sheet-title-card"><h2 id="sheet8-title">القياس النهائي لنواتج التعلم</h2><p>يقدّم هذا القسم خلاصة تحقق نواتج التعلم مقارنة بالهدف المستهدف، مع ربط النتائج بمؤشرات التحسين.</p></div>
+      <section class="content-section"><div class="section-title">منهجية القياس النهائي</div><ul class="steps-list"><li class="step-item"><strong>حساب متوسط الأداء:</strong> تجميع نتائج الاختبارات والأنشطة ذات الصلة.</li><li class="step-item"><strong>الربط بالنواتج:</strong> تحديد الأسئلة أو الأنشطة التي تقيس كل CLO.</li><li class="step-item"><strong>احتساب متوسط الناتج:</strong> متوسط الأداء في كل ناتج تعلم.</li><li class="step-item"><strong>المقارنة بالهدف:</strong> مقارنة الأداء الفعلي بالهدف المستهدف، مثل 70%.</li></ul></section>
+      <section class="content-section"><div class="example-section"><div class="example-title">مثال التقرير النهائي</div><div class="table-wrapper"><table><caption class="hidden-print-note">مثال: التقرير النهائي لنواتج التعلم</caption><thead><tr><th>رمز CLO</th><th>وصف ناتج التعلم</th><th>PLO</th><th>متوسط الطلاب %</th><th>متوسط الطالبات %</th><th>المتوسط العام %</th><th>الهدف %</th><th>تحقق؟</th></tr></thead><tbody><tr><td class="number-cell">1.1</td><td>يعرّف المفاهيم والمبادئ العامة للاتصالات التسويقية المتكاملة</td><td class="number-cell">ع1</td><td class="percentage-cell">95.03</td><td class="percentage-cell">94.50</td><td class="percentage-cell">94.68</td><td class="number-cell">70</td><td class="percentage-cell">✓</td></tr><tr><td class="number-cell">1.2</td><td>تحديد مكونات المزج التسويقي وتطبيق المكونات في صناعة قرارات الاتصال.</td><td class="number-cell">ع2</td><td class="percentage-cell">98.14</td><td class="percentage-cell">90.41</td><td class="percentage-cell">92.98</td><td class="number-cell">70</td><td class="percentage-cell">✓</td></tr><tr><td class="number-cell">2.1</td><td>مهارة تخطيط لحملة ترويجية وإعلانية</td><td class="number-cell">م1</td><td class="percentage-cell">90.00</td><td class="percentage-cell">100.00</td><td class="percentage-cell">96.67</td><td class="number-cell">70</td><td class="percentage-cell">✓</td></tr></tbody></table></div></div><div class="alert alert-success"><div class="alert-icon">✓</div><div>عند انخفاض أي ناتج عن الهدف، أضف توصية تحسين محددة، قابلة للقياس، ومرتبطة بطريقة التدريس أو التقويم.</div></div></section>
+    </section>
+
+    <footer><p>وحدة الجودة و البيانات - الكلية التطبيقية - جامعة أم القرى</p><p>للتواصل: <a href="mailto:applied_qm@uqu.edu.sa">applied_qm@uqu.edu.sa</a></p></footer>
+  </div>
+
+  <script>
+    function showSheet(index) {
+      const buttons = Array.from(document.querySelectorAll('.nav-button'));
+      const sheets = Array.from(document.querySelectorAll('.sheet-content'));
+      sheets.forEach(s => s.classList.remove('active'));
+      buttons.forEach((btn, i) => {
+        const selected = i === index;
+        btn.classList.toggle('active', selected);
+        btn.setAttribute('aria-selected', selected ? 'true' : 'false');
+      });
+      const sheet = sheets[index];
+      if (sheet) {
+        sheet.classList.add('active');
+        sheet.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (sheet.id) history.replaceState(null, '', '#' + sheet.id);
+      }
+    }
+
+    (function initFromHash() {
+      const hash = location.hash.replace('#', '');
+      if (hash) {
+        const sheets = Array.from(document.querySelectorAll('.sheet-content'));
+        const index = sheets.findIndex(s => s.id === hash);
+        if (index >= 0) showSheet(index);
+      } else {
+        showSheet(0);
+      }
+    })();
+
+    (function setupKeyboardNav() {
+      const tablist = document.querySelector('.nav-tabs');
+      if (!tablist) return;
+      tablist.addEventListener('keydown', (e) => {
+        const buttons = Array.from(tablist.querySelectorAll('.nav-button'));
+        const activeIndex = buttons.findIndex(b => b.classList.contains('active'));
+        if (e.key === 'ArrowLeft') {
+          e.preventDefault();
+          const prev = (activeIndex - 1 + buttons.length) % buttons.length;
+          buttons[prev].click();
+          buttons[prev].focus();
+        } else if (e.key === 'ArrowRight') {
+          e.preventDefault();
+          const next = (activeIndex + 1) % buttons.length;
+          buttons[next].click();
+          buttons[next].focus();
+        } else if (e.key === 'Home') {
+          e.preventDefault();
+          buttons[0].click();
+          buttons[0].focus();
+        } else if (e.key === 'End') {
+          e.preventDefault();
+          buttons[buttons.length - 1].click();
+          buttons[buttons.length - 1].focus();
+        }
+      });
+    })();
+
+    window.addEventListener('hashchange', () => {
+      const hash = location.hash.replace('#', '');
+      if (!hash) return;
+      const sheets = Array.from(document.querySelectorAll('.sheet-content'));
+      const index = sheets.findIndex(s => s.id === hash);
+      if (index >= 0) showSheet(index);
+    });
+
+    (function setupCollapsibleExamples() {
+      const examples = Array.from(document.querySelectorAll('.example-section'));
+      examples.forEach((section, index) => {
+        if (section.classList.contains('collapse-ready')) return;
+        const title = section.querySelector('.example-title');
+        if (!title) return;
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'example-toggle';
+        button.innerHTML = title.innerHTML.trim();
+        const body = document.createElement('div');
+        body.className = 'example-collapse-body';
+        body.id = `example-collapse-${index + 1}`;
+        button.setAttribute('aria-expanded', 'false');
+        button.setAttribute('aria-controls', body.id);
+        title.replaceWith(button);
+        let node = button.nextSibling;
+        while (node) {
+          const next = node.nextSibling;
+          body.appendChild(node);
+          node = next;
+        }
+        section.appendChild(body);
+        section.classList.add('collapse-ready');
+        button.addEventListener('click', () => {
+          const isOpen = section.classList.toggle('is-open');
+          button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
