@@ -52,6 +52,8 @@
     .alert { display:grid; grid-template-columns:auto 1fr; gap:12px; padding:16px 18px; border-radius:16px; margin:18px 0; border:1px solid transparent; font-weight:700; }
     .alert-icon { font-size:1.25rem; line-height:1; margin-top:6px; } .alert-warning { color:#7a4b00; background:#fff8e8; border-color:#f2d28a; } .alert-success { color:var(--success); background:#ecfdf3; border-color:#abefc6; } .alert-info { color:#175cd3; background:#eff8ff; border-color:#b2ddff; }
     .formula-box { direction:rtl; text-align:center; background:linear-gradient(135deg,#f1f8f4,#fff8e8); border:1px solid rgba(201,162,39,.38); border-radius:16px; padding:18px; margin:18px 0; color:var(--uqu-green-dark); font-weight:900; }
+    .calculation-card { background:linear-gradient(135deg,rgba(0,108,53,.025),rgba(201,162,39,.055)); border:1px solid rgba(0,108,53,.10); border-radius:18px; padding:20px; margin-top:16px; }
+    .calculation-title { color:var(--uqu-green-dark); font-weight:900; font-size:1.08rem; margin-bottom:14px; }
     .example-section { padding:0; overflow:hidden; border-radius:18px; background:linear-gradient(135deg,rgba(0,108,53,.035),rgba(201,162,39,.06)); border:1px solid rgba(0,108,53,.10); }
     .example-toggle { width:100%; border:0; background:linear-gradient(135deg,rgba(0,108,53,.06),rgba(201,162,39,.10)); color:var(--uqu-green-dark); cursor:pointer; padding:18px 22px; font-family:'Cairo',sans-serif; font-size:1.05rem; font-weight:900; text-align:right; display:flex; align-items:center; gap:16px; }
     .example-toggle::after { content:"عرض المثال ▾"; margin-inline-start:auto; min-width:128px; height:42px; border-radius:999px; background:linear-gradient(135deg,var(--uqu-green),var(--uqu-green-dark)); color:#fff; display:inline-grid; place-items:center; font-size:.9rem; font-weight:900; box-shadow:0 10px 22px rgba(0,108,53,.20); }
@@ -87,6 +89,35 @@
     .table-wrapper table:not(.compact-table) td.number-cell,
     .table-wrapper table:not(.compact-table) td.percentage-cell { text-align:center; font-weight:900; }
     .table-wrapper table:not(.compact-table) td.total-cell { background:var(--uqu-gold-soft)!important; color:var(--uqu-green-dark)!important; font-weight:950; }
+    #sheet-3 .assessment-map-wrapper { border-radius:18px; border:1px solid var(--line); background:#fff; overflow-x:auto; box-shadow:0 14px 32px rgba(16,24,40,.08); margin-top:14px; }
+    #sheet-3 .assessment-map-table { min-width:1000px!important; width:100%; border-collapse:collapse; table-layout:fixed; direction:ltr; font-family:'Cairo',"Segoe UI",sans-serif; background:#fff; }
+    #sheet-3 .assessment-map-table th,
+    #sheet-3 .assessment-map-table td { border:1px solid #e8eeeb!important; padding:4px 3px!important; text-align:center!important; vertical-align:middle!important; font-size:.58rem!important; line-height:1.18!important; box-shadow:none!important; }
+    #sheet-3 .assessment-map-table thead th { background:var(--uqu-green-dark)!important; color:#fff!important; font-weight:900!important; border:1px solid rgba(255,255,255,.34)!important; border-bottom:3px solid var(--uqu-gold)!important; padding:5px 3px!important; text-align:center!important; vertical-align:middle!important; font-size:.58rem!important; line-height:1.18!important; }
+    #sheet-3 .assessment-map-table .meta-head { background:var(--uqu-green-dark)!important; }
+    #sheet-3 .assessment-map-table .group-title { background:var(--uqu-green-dark)!important; color:#fff!important; font-size:.66rem!important; padding:5px 4px!important; border-top:4px solid #111!important; }
+    #sheet-3 .assessment-map-table .assignment-title,
+    #sheet-3 .assessment-map-table .assignment-cell { border-left:5px solid #111!important; }
+    #sheet-3 .assessment-map-table .project-title,
+    #sheet-3 .assessment-map-table .project-start { border-left:5px solid #111!important; }
+    #sheet-3 .assessment-map-table .project-end,
+    #sheet-3 .assessment-map-table .assignment-end { border-right:5px solid #111!important; }
+    #sheet-3 .assessment-map-table .group-bottom { border-bottom:5px solid #111!important; }
+    #sheet-3 .assessment-map-table .clo-badge { display:inline-grid; place-items:center; min-width:44px; min-height:20px; padding:1px 6px; background:#fff; color:#111; border:3px solid #006dff; font-weight:900; font-size:.64rem; line-height:1; border-radius:4px; }
+    #sheet-3 .assessment-map-table .weight-circle { display:inline-grid; place-items:center; width:26px; height:26px; margin:0 auto; border-radius:50%; background:#fff; color:var(--uqu-green-dark); border:5px solid #f12b2b; font-weight:900; font-size:.54rem; }
+    #sheet-3 .assessment-map-table tbody tr:nth-child(odd) td { background:#fbfcfb!important; }
+    #sheet-3 .assessment-map-table tbody tr:nth-child(even) td { background:#fff!important; }
+    #sheet-3 .assessment-map-table tbody tr:hover td { background:#fff!important; }
+    #sheet-3 .assessment-map-table .instructor-cell,
+    #sheet-3 .assessment-map-table .section-cell { direction:rtl; }
+    #sheet-3 .assessment-map-table .related-cell { background:#f2f4f7!important; color:#667085!important; font-weight:900; }
+    #sheet-3 .assessment-map-table .metric-head { font-size:.5rem!important; line-height:1.12!important; }
+    #sheet-3 .assessment-map-table .num { font-weight:900; color:#17202a; }
+    #sheet-3 .visual-legend { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin-top:14px; }
+    #sheet-3 .visual-legend-item { display:flex; align-items:center; gap:10px; background:#fff; border:1px solid #e8eeeb; border-radius:14px; padding:12px 14px; color:#475467; font-weight:800; }
+    #sheet-3 .legend-circle { width:28px; height:28px; border-radius:50%; border:6px solid #f12b2b; background:#fff; flex:0 0 auto; }
+    #sheet-3 .legend-blue-box { width:34px; height:24px; border:5px solid #006dff; background:#fff; border-radius:4px; flex:0 0 auto; }
+    #sheet-3 .legend-black-box { width:38px; height:26px; border:6px solid #111; background:#fff; flex:0 0 auto; }
     #sheet-6 .table-wrapper table tbody tr:first-child td { background:#f2f4f7!important; color:#344054; font-weight:900; }
     #sheet-6 .table-wrapper table tbody tr:first-child td.label-cell { color:#0b3f75; }
     footer { margin-top:32px; border-radius:24px 24px 0 0; background:linear-gradient(135deg,#101828,var(--uqu-green-dark)); color:rgba(255,255,255,.86); padding:24px; text-align:center; border-top:5px solid var(--uqu-gold); } footer a { color:#fff; text-decoration:underline; font-weight:700; }
@@ -184,24 +215,109 @@
     </section>
 
     <section id="sheet-3" class="sheet-content" role="region" aria-labelledby="sheet3-title">
-      <div class="sheet-title-card"><h2 id="sheet3-title">قياس مخرجات التكاليف والمشاريع</h2><p>يستخدم هذا القسم لإدخال أداء الشعب في الأنشطة العملية وربطها بنواتج التعلم المستهدفة.</p></div>
-      <div class="grid-2">
-        <section class="content-section"><div class="section-title">آلية الإدخال</div><ul class="steps-list"><li class="step-item"><strong>معلومات الشعبة:</strong> رقم الشعبة، النوع، الأستاذ، وعدد الطلاب.</li><li class="step-item"><strong>أعمدة النواتج:</strong> أضف عمود العدد وعمود النسبة لكل ناتج تعلم.</li><li class="step-item"><strong>البيانات التفصيلية:</strong> أدخل بيانات كل شعبة في صف مستقل.</li><li class="step-item"><strong>الاحتساب:</strong> استخدم معادلات Excel للنسب والمتوسطات بدلاً من الإدخال اليدوي.</li></ul><div class="formula-box">النسبة المئوية = (عدد الإجابات الصحيحة ÷ عدد الطلاب) × 100</div></section>
-        <section class="content-section"><div class="example-section"><div class="example-title">مثال مختصر</div><div class="table-wrapper"><table><caption class="hidden-print-note">مثال: قياس مخرجات التكاليف والمشاريع</caption><thead><tr><th>الشعبة</th><th>النوع</th><th>الأستاذ</th><th>عدد الطلاب</th><th>ناتج 2.1</th><th>نسبة</th><th>ناتج 2.2</th><th>نسبة</th></tr></thead><tbody><tr><td class="number-cell">1</td><td>الطالبات</td><td>د.نجاح الرشيدي</td><td class="number-cell">22</td><td class="number-cell">22</td><td class="percentage-cell">100%</td><td class="number-cell">20</td><td class="percentage-cell">90.9%</td></tr><tr><td class="number-cell">2</td><td>الطلاب</td><td>د. أحمد حريري</td><td class="number-cell">17</td><td class="number-cell">17</td><td class="percentage-cell">100%</td><td class="number-cell">16</td><td class="percentage-cell">94.1%</td></tr><tr><td class="number-cell">701</td><td>الطالبات</td><td>د.نجاح الرشيدي</td><td class="number-cell">36</td><td class="number-cell">36</td><td class="percentage-cell">100%</td><td class="number-cell">34</td><td class="percentage-cell">94.4%</td></tr></tbody></table></div></div><div class="alert alert-info"><div class="alert-icon">ℹ</div><div>يفضل حماية خلايا المعادلات في ملف Excel حتى لا يتم تعديلها بالخطأ أثناء الإدخال.</div></div></section>
-      </div>
+      <div class="sheet-title-card"><h2 id="sheet3-title">قياس مخرجات التكاليف والمشاريع</h2><p>تهدف هذه الصفحة إلى قياس مستوى تحقق نواتج التعلم من خلال التكاليف أو المشاريع المستخدمة في المقرر. ويعتمد القياس على أداء الطلاب في الأسئلة أو المعايير المرتبطة بكل ناتج تعلم ضمن أداة التقييم.</p></div>
+      <section class="content-section">
+        <div class="section-title">الخطوات</div>
+        <ul class="steps-list">
+          <li class="step-item">تحديد نواتج التعلم التي يتم قياسها لكل سؤال من خلال المشروع أو التكليف.</li>
+          <li class="step-item">تحديد الوزن أو النسبة المخصصة لكل ناتج تعلم.</li>
+          <li class="step-item">إدخال النسبة المخصصة لناتج التعلم في الخانة المخصصة لذلك. مثال: 10% و 6% و 6% و 8%.</li>
+          <li class="step-item">التأكد من أن مجموع نسب جميع الأسئلة أو المعايير المدرجة في الصفحة يساوي نسبة التكاليف والمشاريع المعتمدة في توزيع درجات المقرر. مثال: إذا كانت نسبة المشروع في توزيع درجات المقرر (30%) والتكاليف 10%، فيجب أن يكون مجموع نسب جميع الأسئلة أو المعايير المدرجة في هذه الصفحة مساوياً لـ (40%).</li>
+          <li class="step-item">إدخال متوسط درجات الطلاب في السؤال أو المعيار المرتبط بناتج التعلم.</li>
+          <li class="step-item">يقوم ملف الإكسل تلقائياً باحتساب نسبة تحقق ناتج التعلم بناءً على متوسط أداء الطلاب والدرجة الكلية المخصصة للسؤال أو المعيار.</li>
+        </ul>
+      </section>
+      <section class="content-section">
+        <div class="section-title">كيفية احتساب متوسط درجات الطلاب</div>
+        <p class="instruction-text">يتم احتساب متوسط درجات الطلاب للسؤال المرتبط بناتج التعلم من خلال جمع درجات جميع الطلاب في ذلك السؤال، ثم قسمة المجموع على عدد الطلاب.</p>
+        <p class="instruction-text">إذا كان عدد طلاب الشعبة (17) طالباً، وكان السؤال الأول المرتبط بناتج التعلم (2.1) درجته الكلية (10) درجات، وبلغ مجموع درجات الطلاب في هذا السؤال (153) درجة، فإن متوسط درجات الطلاب يحسب كما يلي:</p>
+        <div class="formula-box">متوسط الدرجات = مجموع درجات الطلاب في السؤال ÷ عدد الطلاب</div>
+        <div class="formula-box">متوسط الدرجات = 153 ÷ 17 = 9 درجات</div>
+        <p class="instruction-text">وبذلك يكون متوسط أداء الطلاب في السؤال الأول (9) درجات من أصل (10) درجات.</p>
+      </section>
+      <section class="content-section">
+        <div class="example-section">
+          <div class="example-title">مثال: توزيع نواتج التعلم على المشروع والتكاليف</div>
+          <div class="assessment-map-wrapper">
+            <table class="assessment-map-table" aria-label="مثال توزيع نواتج التعلم على المشروع والتكاليف">
+              <colgroup>
+                <col style="width:50px;"><col style="width:62px;"><col style="width:104px;"><col style="width:56px;"><col style="width:72px;">
+                <col style="width:52px;"><col style="width:52px;"><col style="width:52px;"><col style="width:52px;"><col style="width:52px;"><col style="width:52px;"><col style="width:52px;"><col style="width:52px;">
+                <col style="width:52px;"><col style="width:52px;"><col style="width:52px;"><col style="width:52px;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th class="meta-head" rowspan="3">Number of Section<br>عدد الشعب</th>
+                  <th class="meta-head" rowspan="3">Sections<br>الشطر</th>
+                  <th class="meta-head" rowspan="3">Instructor<br>أستاذ المقرر</th>
+                  <th class="meta-head" rowspan="3">Number of Students<br>عدد الطلاب</th>
+                  <th class="meta-head" rowspan="3">Related CLO<br>مخرج تعلم المقرر</th>
+                  <th class="group-title project-title project-end" colspan="8">Project / المشروع</th>
+                  <th class="group-title assignment-title assignment-end" colspan="4">Assignment / تكاليف</th>
+                </tr>
+                <tr>
+                  <th class="project-start" colspan="2"><span class="clo-badge">2.1</span></th>
+                  <th colspan="2"><span class="clo-badge">2.2</span></th>
+                  <th colspan="2"><span class="clo-badge">2.3</span></th>
+                  <th class="project-end" colspan="2"><span class="clo-badge">3.1</span></th>
+                  <th class="assignment-cell" colspan="2"><span class="clo-badge">1.1</span></th>
+                  <th class="assignment-end" colspan="2"><span class="clo-badge">1.2</span></th>
+                </tr>
+                <tr>
+                  <th class="metric-head project-start">Question<br>Aver grade<br>متوسط درجة السؤال</th><th><span class="weight-circle">10%</span></th>
+                  <th class="metric-head">Question<br>Aver grade<br>متوسط درجة السؤال</th><th><span class="weight-circle">6%</span></th>
+                  <th class="metric-head">Question<br>Aver grade<br>متوسط درجة السؤال</th><th><span class="weight-circle">6%</span></th>
+                  <th class="metric-head">Question<br>Aver grade<br>متوسط درجة السؤال</th><th class="project-end"><span class="weight-circle">8%</span></th>
+                  <th class="metric-head assignment-cell">Question<br>Aver grade<br>متوسط درجة السؤال</th><th><span class="weight-circle">6%</span></th>
+                  <th class="metric-head">Question<br>Aver grade<br>متوسط درجة السؤال</th><th class="assignment-end"><span class="weight-circle">4%</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="num section-cell">1</td><td class="section-cell">Female / الطالبات</td><td class="instructor-cell">د.نجاح الرشيدي</td><td class="num">22</td><td class="related-cell"></td>
+                  <td class="num project-start">10</td><td class="num">100</td><td class="num">6</td><td class="num">100</td><td class="num">6</td><td class="num">100</td><td class="num">8</td><td class="num project-end">100</td>
+                  <td class="num assignment-cell">6</td><td class="num">100</td><td class="num">3</td><td class="num assignment-end">75</td>
+                </tr>
+                <tr>
+                  <td class="num section-cell">2</td><td class="section-cell">Male / الطلاب</td><td class="instructor-cell">د. أحمد حريري</td><td class="num">17</td><td class="related-cell"></td>
+                  <td class="num project-start">9</td><td class="num">90</td><td class="num">6</td><td class="num">100</td><td class="num">6</td><td class="num">100</td><td class="num">8</td><td class="num project-end">100</td>
+                  <td class="num assignment-cell">5</td><td class="num">83</td><td class="num">4</td><td class="num assignment-end">100</td>
+                </tr>
+                <tr>
+                  <td class="num section-cell">701</td><td class="section-cell">Female / الطالبات</td><td class="instructor-cell">د.نجاح الرشيدي</td><td class="num">36</td><td class="related-cell"></td>
+                  <td class="num project-start group-bottom">10</td><td class="num group-bottom">100</td><td class="num group-bottom">6</td><td class="num group-bottom">100</td><td class="num group-bottom">5</td><td class="num group-bottom">83</td><td class="num group-bottom">8</td><td class="num project-end group-bottom">100</td>
+                  <td class="num assignment-cell group-bottom">4</td><td class="num group-bottom">67</td><td class="num group-bottom">3</td><td class="num assignment-end group-bottom">75</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="visual-legend" aria-label="شرح رموز جدول توزيع نواتج التعلم">
+            <div class="visual-legend-item"><span class="legend-circle" aria-hidden="true"></span><span>الدوائر الحمراء تمثل نسبة كل ناتج تعلم.</span></div>
+            <div class="visual-legend-item"><span class="legend-blue-box" aria-hidden="true"></span><span>المربع الأزرق يمثل رمز ناتج التعلم في كل سؤال.</span></div>
+            <div class="visual-legend-item"><span class="legend-black-box" aria-hidden="true"></span><span>المربع الأسود يوضح جزء المشروع وجزء التكاليف.</span></div>
+          </div>
+        </div>
+      </section>
+      <section class="content-section">
+        <div class="section-title">ملاحظات</div>
+        <ul style="padding-right:24px;color:#475467;line-height:1.9;">
+          <li>تمثل النسبة المئوية درجة تحقق ناتج التعلم مقارنة بالدرجة الكلية المخصصة له في أداة التقييم، ولا تمثل نسبة عدد الطلاب الذين حققوا ناتج التعلم.</li>
+          <li>يجب أن يستند توزيع نسب نواتج التعلم إلى توزيع الدرجات الفعلي في أداة التقييم المعتمدة للمشروع أو التكليف.</li>
+        </ul>
+      </section>
     </section>
 
     <section id="sheet-4" class="sheet-content" role="region" aria-labelledby="sheet4-title">
       <div class="sheet-title-card"><h2 id="sheet4-title">قياس مخرجات الاختبار النصفي</h2><p>يتم إدخال نسب أداء الطلاب في أسئلة الاختبار النصفي، مع التأكد من تغطية جميع الأسئلة والشعب.</p></div>
       <section class="content-section"><div class="section-title">ضوابط التعبئة</div><ul class="steps-list"><li class="step-item"><strong>معلومات الشعبة:</strong> رقم الشعبة، النوع، الأستاذ، وعدد الطلاب.</li><li class="step-item"><strong>أعمدة الأسئلة:</strong> QT1 إلى QT20 أو حسب عدد أسئلة الاختبار المعتمد.</li><li class="step-item"><strong>النسب المئوية:</strong> أدخل متوسط أداء الطلاب في كل سؤال.</li><li class="step-item"><strong>حدود القيم:</strong> جميع النسب يجب أن تقع بين 0% و100%.</li></ul></section>
-      <section class="content-section"><div class="example-section"><div class="example-title">مثال جدول الاختبار النصفي</div><div class="table-wrapper"><table><caption class="hidden-print-note">مثال: قياس مخرجات الاختبار النصفي</caption><thead><tr><th>الشعبة</th><th>النوع</th><th>الأستاذ</th><th>عدد</th><th>Q1</th><th>Q2</th><th>Q3</th><th>Q4</th><th>Q5</th><th>المتوسط</th></tr></thead><tbody><tr><td class="number-cell">1</td><td>الطالبات</td><td>د.نجاح الرشيدي</td><td class="number-cell">22</td><td class="percentage-cell">100%</td><td class="percentage-cell">95.45%</td><td class="percentage-cell">100%</td><td class="percentage-cell">95.45%</td><td class="percentage-cell">100%</td><td class="percentage-cell total-cell">98.18%</td></tr><tr><td class="number-cell">2</td><td>الطلاب</td><td>د. أحمد حريري</td><td class="number-cell">17</td><td class="percentage-cell">80%</td><td class="percentage-cell">100%</td><td class="percentage-cell">100%</td><td class="percentage-cell">80%</td><td class="percentage-cell">100%</td><td class="percentage-cell total-cell">92%</td></tr></tbody></table></div></div></section>
+      <section class="content-section"><div class="example-section"><div class="example-title">مثال جدول الاختبار النصفي</div><div class="table-wrapper"><table><caption class="hidden-print-note">مثال: قياس مخرجات الاختبار النصفي</caption><thead><tr><th>الشعبة</th><th>الشطر</th><th>الأستاذ</th><th>عدد</th><th>Q1</th><th>Q2</th><th>Q3</th><th>Q4</th><th>Q5</th><th>المتوسط</th></tr></thead><tbody><tr><td class="number-cell">1</td><td>الطالبات</td><td>د.نجاح الرشيدي</td><td class="number-cell">22</td><td class="percentage-cell">100%</td><td class="percentage-cell">95.45%</td><td class="percentage-cell">100%</td><td class="percentage-cell">95.45%</td><td class="percentage-cell">100%</td><td class="percentage-cell total-cell">98.18%</td></tr><tr><td class="number-cell">2</td><td>الطلاب</td><td>د. أحمد حريري</td><td class="number-cell">17</td><td class="percentage-cell">80%</td><td class="percentage-cell">100%</td><td class="percentage-cell">100%</td><td class="percentage-cell">80%</td><td class="percentage-cell">100%</td><td class="percentage-cell total-cell">92%</td></tr></tbody></table></div></div></section>
       <div class="checklist-box"><div class="checklist-title">قائمة تحقق قبل الاعتماد</div><label class="checklist-item"><input type="checkbox"> جميع الأسئلة لها بيانات.</label><label class="checklist-item"><input type="checkbox"> النسب بين 0 و100%.</label><label class="checklist-item"><input type="checkbox"> جميع الشعب مدرجة.</label><label class="checklist-item"><input type="checkbox"> أسماء الأساتذة متطابقة مع ورقة البيانات الأساسية.</label></div>
     </section>
 
     <section id="sheet-5" class="sheet-content" role="region" aria-labelledby="sheet5-title">
       <div class="sheet-title-card"><h2 id="sheet5-title">قياس مخرجات الاختبار النهائي</h2><p>تطبق نفس منهجية الاختبار النصفي على الاختبار النهائي، غالباً بعدد أسئلة أكبر ووزن أعلى.</p></div>
       <section class="content-section"><div class="section-title">آلية القياس</div><ul class="steps-list"><li class="step-item"><strong>تعبئة بيانات الشعبة:</strong> رقم الشعبة، النوع، الأستاذ، وعدد الطلاب.</li><li class="step-item"><strong>إدراج الأسئلة:</strong> Q1 إلى Q40 أو حسب الاختبار النهائي المعتمد.</li><li class="step-item"><strong>إدخال نسب الأداء:</strong> نسبة تحقق كل سؤال لكل شعبة.</li><li class="step-item"><strong>احتساب المتوسط:</strong> متوسط أداء الشعبة في أسئلة الاختبار النهائي.</li></ul></section>
-      <section class="content-section"><div class="example-section"><div class="example-title">عينة من جدول الاختبار النهائي</div><div class="table-wrapper"><table><caption class="hidden-print-note">مثال: قياس مخرجات الاختبار النهائي</caption><thead><tr><th>الشعبة</th><th>النوع</th><th>الأستاذ</th><th>عدد</th><th>Q1</th><th>Q2</th><th>Q3</th><th>...</th><th>Q40</th><th>المتوسط</th></tr></thead><tbody><tr><td class="number-cell">1</td><td>الطالبات</td><td>د.نجاح الرشيدي</td><td class="number-cell">22</td><td class="percentage-cell">95.45%</td><td class="percentage-cell">95.45%</td><td class="percentage-cell">100%</td><td class="number-cell">...</td><td class="percentage-cell">100%</td><td class="percentage-cell total-cell">94.77%</td></tr><tr><td class="number-cell">2</td><td>الطلاب</td><td>د. أحمد حريري</td><td class="number-cell">17</td><td class="percentage-cell">88.24%</td><td class="percentage-cell">100%</td><td class="percentage-cell">100%</td><td class="number-cell">...</td><td class="percentage-cell">100%</td><td class="percentage-cell total-cell">97.06%</td></tr></tbody></table></div></div></section>
+      <section class="content-section"><div class="example-section"><div class="example-title">عينة من جدول الاختبار النهائي</div><div class="table-wrapper"><table><caption class="hidden-print-note">مثال: قياس مخرجات الاختبار النهائي</caption><thead><tr><th>الشعبة</th><th>الشطر</th><th>الأستاذ</th><th>عدد</th><th>Q1</th><th>Q2</th><th>Q3</th><th>...</th><th>Q40</th><th>المتوسط</th></tr></thead><tbody><tr><td class="number-cell">1</td><td>الطالبات</td><td>د.نجاح الرشيدي</td><td class="number-cell">22</td><td class="percentage-cell">95.45%</td><td class="percentage-cell">95.45%</td><td class="percentage-cell">100%</td><td class="number-cell">...</td><td class="percentage-cell">100%</td><td class="percentage-cell total-cell">94.77%</td></tr><tr><td class="number-cell">2</td><td>الطلاب</td><td>د. أحمد حريري</td><td class="number-cell">17</td><td class="percentage-cell">88.24%</td><td class="percentage-cell">100%</td><td class="percentage-cell">100%</td><td class="number-cell">...</td><td class="percentage-cell">100%</td><td class="percentage-cell total-cell">97.06%</td></tr></tbody></table></div></div></section>
     </section>
 
     <section id="sheet-6" class="sheet-content" role="region" aria-labelledby="sheet6-title">
@@ -213,7 +329,7 @@
     <section id="sheet-7" class="sheet-content" role="region" aria-labelledby="sheet7-title">
       <div class="sheet-title-card"><h2 id="sheet7-title">توزيع التقديرات النهائية</h2><p>يعرض هذا القسم توزيع الطلاب على التقديرات النهائية، مع تحقق إلزامي من مطابقة المجموع لعدد الطلاب.</p></div>
       <section class="content-section"><div class="section-title">خطوات التعبئة</div><ul class="steps-list"><li class="step-item"><strong>معلومات الشعبة:</strong> رقم الشعبة، النوع، الأستاذ، وعدد الطلاب الكلي.</li><li class="step-item"><strong>أعمدة التقديرات:</strong> A+، A، B+، B، C+، C، D+، D، F، محروم.</li><li class="step-item"><strong>إدخال الأعداد:</strong> عدد الطلاب الحاصلين على كل تقدير.</li><li class="step-item"><strong>التحقق:</strong> مجموع التقديرات يجب أن يساوي عدد الطلاب في الشعبة.</li></ul><div class="formula-box">المجموع = A+ + A + B+ + B + C+ + C + D+ + D + F + محروم = إجمالي الطلاب</div></section>
-      <section class="content-section"><div class="example-section"><div class="example-title">مثال جدول التقديرات</div><div class="table-wrapper"><table><caption class="hidden-print-note">مثال: توزيع التقديرات النهائية</caption><thead><tr><th>الشعبة</th><th>النوع</th><th>الأستاذ</th><th>A+</th><th>A</th><th>B+</th><th>B</th><th>C</th><th>D</th><th>محروم</th><th>المجموع</th></tr></thead><tbody><tr><td class="number-cell">1</td><td>الطالبات</td><td>د.نجاح الرشيدي</td><td class="number-cell">1</td><td class="number-cell">4</td><td class="number-cell">5</td><td class="number-cell">5</td><td class="number-cell">5</td><td class="number-cell">1</td><td class="number-cell">1</td><td class="total-cell">22</td></tr><tr><td class="number-cell">2</td><td>الطلاب</td><td>د. أحمد حريري</td><td class="number-cell">5</td><td class="number-cell">2</td><td class="number-cell">3</td><td class="number-cell">2</td><td class="number-cell">3</td><td class="number-cell">1</td><td class="number-cell">1</td><td class="total-cell">17</td></tr></tbody></table></div></div></section>
+      <section class="content-section"><div class="example-section"><div class="example-title">مثال جدول التقديرات</div><div class="table-wrapper"><table><caption class="hidden-print-note">مثال: توزيع التقديرات النهائية</caption><thead><tr><th>الشعبة</th><th>الشطر</th><th>الأستاذ</th><th>A+</th><th>A</th><th>B+</th><th>B</th><th>C</th><th>D</th><th>محروم</th><th>المجموع</th></tr></thead><tbody><tr><td class="number-cell">1</td><td>الطالبات</td><td>د.نجاح الرشيدي</td><td class="number-cell">1</td><td class="number-cell">4</td><td class="number-cell">5</td><td class="number-cell">5</td><td class="number-cell">5</td><td class="number-cell">1</td><td class="number-cell">1</td><td class="total-cell">22</td></tr><tr><td class="number-cell">2</td><td>الطلاب</td><td>د. أحمد حريري</td><td class="number-cell">5</td><td class="number-cell">2</td><td class="number-cell">3</td><td class="number-cell">2</td><td class="number-cell">3</td><td class="number-cell">1</td><td class="number-cell">1</td><td class="total-cell">17</td></tr></tbody></table></div></div></section>
     </section>
 
     <section id="sheet-8" class="sheet-content" role="region" aria-labelledby="sheet8-title">
